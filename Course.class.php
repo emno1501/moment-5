@@ -23,13 +23,12 @@ class Course {
     }
     //Lägg till kurs
     public function addCourse($code, $name, $prog, $plan) {
-        /* $sql = "INSERT INTO courses(code, name, progression, plan) VALUES('" . $this->code . "', '" . $this->name . "', '" . $this->prog ."', '" . $this->plan . "');"; */
-        $sql = "INSERT INTO courses(code, name, progression, plan) VALUES('$code', '$name', '$prog', '$plan');";
+        $sql = "INSERT INTO courses(code, name, progression, plan) VALUES('" . $code . "', '" . $name . "', '" . $prog . "', '" . $plan . "');";
         return $result = $this->db->query($sql);
     }
     //Uppdatera kurs
     public function updateCourse($id, $code, $name, $prog, $plan) {
-        $sql = "UPDATE courses SET code='$code', name='$name', progression='$prog', plan='$plan' WHERE id=$id;";
+        $sql = "UPDATE courses SET code='" . $code . "', name='" . $name . "', progression='" . $prog . "', plan='" . $plan . "' WHERE id=$id;";
         return $result = $this->db->query($sql);
     }
     //Radera kurs
