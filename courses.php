@@ -11,10 +11,14 @@ spl_autoload_register(function ($class) {
 });
 
 //Värden för databasanslutning
-define("DBHOST", "studentmysql.miun.se");
+/* define("DBHOST", "studentmysql.miun.se");
 define("DBUSER", "emno1501");
 define("DBPASS", "7sr8zjuo");
-define("DBDATABASE", "emno1501");
+define("DBDATABASE", "emno1501"); */
+define("DBHOST", "localhost");
+define("DBUSER", "emma");
+define("DBPASS", "password");
+define("DBDATABASE", "course_api");
 
 
 $method = $_SERVER["REQUEST_METHOD"]; //Läsa in HTTP-metod
@@ -51,15 +55,15 @@ switch($method) {
                 $response = array("message" => "Kurs tillagd");
             } else {
                 http_response_code(500); //Serverfel
-                $response = array("message" => "Kurs kunde inte uppdateras.");
+                $response = array("message" => "500 Kurs kunde inte läggas till.");
             }
         } else {
             http_response_code(404); //Fel
-            $response = array("message" => "Kurs kunde inte uppdateras.");
+            $response = array("message" => "404 Kurs kunde inte läggas till.");
         }
         break;
     case "PUT": //Uppdatera data
-        if(isset($request[1]) && isset($input["code"]) && isset($input["name"]) && isset($input["progression"]) && isset($input["plan"])) {
+        if(isset($input["code"]) && isset($input["name"]) && isset($input["progression"]) && isset($input["plan"]) && isset($request[1])) {
             $id = $request[1];
             $code = $input["code"];
             $name = $input["name"];
@@ -67,14 +71,14 @@ switch($method) {
             $plan = $input["plan"];
             if($c->updateCourse($id, $code, $name, $prog, $plan)) {
                 http_response_code(201); //Anrop ok
-                $response = array("message" => "Kurs tillagd");
+                $response = array("message" => "Kurs uppdaterad");
             } else {
                 http_response_code(500); //Serverfel
-                $response = array("message" => "Kurs kunde inte uppdateras.");
+                $response = array("message" => "500 Kurs kunde inte uppdateras.");
             }
         } else {
             http_response_code(404); //Fel
-            $response = array("message" => "Kurs kunde inte uppdateras.");
+            $response = array("message" => "404 Kurs kunde inte uppdateras.");
         }
         break;
     case "DELETE": //Ta bort data

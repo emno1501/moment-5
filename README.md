@@ -10,10 +10,10 @@ Webbtjänsten returnerar status-koder efter varje fråga mot databasen.
 
 ## URIs för att använda CRUD
 
-GET     http://studenter.miun.se/~emno1501/dt173g/mom5/del1/courses.php/courses"
+GET     http://studenter.miun.se/~emno1501/dt173g/mom5/del1/courses.php/courses
 
-POST    {"code": "DT173G", "name": "Webbutveckling III", "progression": "B", "plan": "https://www.miun.se/utbildning/kursplaner-och-utbildningsplaner/Sok-kursplan/kursplan/?kursplanid=21873"} http://studenter.miun.se/~emno1501/dt173g/mom5/del1/courses.php/courses"
+POST    {"code": "DT173G", "name": "Webbutveckling III", "progression": "B", "plan": "https://www.miun.se/utbildning/kursplaner-och-utbildningsplaner/Sok-kursplan/kursplan/?kursplanid=21873"} http://studenter.miun.se/~emno1501/dt173g/mom5/del1/courses.php/courses
 
-PUT    {"code": "DT173G", "name": "Webb III", "progression": "B", "plan": "https://www.miun.se/utbildning/kursplaner-och-utbildningsplaner/Sok-kursplan/kursplan/?kursplanid=21873"} http://studenter.miun.se/~emno1501/dt173g/mom5/del1/courses.php/courses/16" *16 = ID på datan som ska ändras*
+PUT    {"code": "DT173G", "name": "Webb III", "progression": "B", "plan": "https://www.miun.se/utbildning/kursplaner-och-utbildningsplaner/Sok-kursplan/kursplan/?kursplanid=21873"} http://studenter.miun.se/~emno1501/dt173g/mom5/del1/courses.php/courses/16 *16 = ID på datan som ska ändras*
 
-DELETE  http://studenter.miun.se/~emno1501/dt173g/mom5/del1/courses.php/courses/16" *16 = ID på datan som ska tas bort*
+DELETE  http://studenter.miun.se/~emno1501/dt173g/mom5/del1/courses.php/courses/16 *16 = ID på datan som ska tas bort*

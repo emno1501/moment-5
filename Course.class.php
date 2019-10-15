@@ -29,7 +29,7 @@ class Course {
     }
     //Uppdatera kurs
     public function updateCourse($id, $code, $name, $prog, $plan) {
-        $sql = "UPDATE courses SET code='$code', name='$name', progression='prog', plan='$plan' WHERE id=$id;";
+        $sql = "UPDATE courses SET code='$code', name='$name', progression='$prog', plan='$plan' WHERE id=$id;";
         return $result = $this->db->query($sql);
     }
     //Radera kurs
