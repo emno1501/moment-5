@@ -11,14 +11,11 @@ spl_autoload_register(function ($class) {
 });
 
 //Värden för databasanslutning
-/* define("DBHOST", "localhost");
+define("DBHOST", "localhost");
 define("DBUSER", "emma");
 define("DBPASS", "password");
-define("DBDATABASE", "course_api"); */
-define("DBHOST", "studentmysql.miun.se");
-define("DBUSER", "emno1501");
-define("DBPASS", "7sr8zjuo");
-define("DBDATABASE", "emno1501");
+define("DBDATABASE", "course_api");
+
 
 $method = $_SERVER["REQUEST_METHOD"]; //Läsa in HTTP-metod
 $request = explode('/', trim($_SERVER['PATH_INFO'],'/')); //Hämta värde som skickats i sökvägen
